@@ -9,6 +9,7 @@ import { parseEmptyStatement } from "./empty";
 import { parseExpression, parseExpressionStatement } from "./expression";
 import { parseForStatement } from "./for";
 import { parseForInStatement } from "./forIn";
+import { parseForOfStatement } from "./forOf";
 import { parseIfStatement } from "./if";
 import { parseLabeledStatement } from "./labeled";
 import { parseReturnStatement } from "./return";
@@ -65,6 +66,7 @@ function parseStatement(
     [ESTree.NodeType.EmptyStatement]: parseEmptyStatement,
     [ESTree.NodeType.ExpressionStatement]: parseExpressionStatement,
     [ESTree.NodeType.ForInStatement]: parseForInStatement,
+    [ESTree.NodeType.ForOfStatement]: parseForOfStatement,
     [ESTree.NodeType.ForStatement]: parseForStatement,
     [ESTree.NodeType.FunctionDeclaration]: parseFunctionDeclaration,
     [ESTree.NodeType.IfStatement]: parseIfStatement,

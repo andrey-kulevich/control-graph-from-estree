@@ -12,6 +12,7 @@ export class NodeType {
   static EmptyStatement = "EmptyStatement";
   static ExpressionStatement = "ExpressionStatement";
   static ForInStatement = "ForInStatement";
+  static ForOfStatement = "ForOfStatement";
   static ForStatement = "ForStatement";
   static FunctionDeclaration = "FunctionDeclaration";
   static FunctionExpression = "FunctionExpression";
@@ -132,6 +133,12 @@ export interface ForStatement extends Statement {
 }
 
 export interface ForInStatement extends Statement {
+  left: VariableDeclaration | Expression;
+  right: Expression;
+  body: Statement;
+}
+
+export interface ForOfStatement extends Statement {
   left: VariableDeclaration | Expression;
   right: Expression;
   body: Statement;
